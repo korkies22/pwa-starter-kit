@@ -11,8 +11,10 @@
     "build": "npm run build:prpl-server && npm run build:static",
     "build:prpl-server": "gulp build:prpl-server",
     "build:static": "polymer build",
+    "build:webpack": "rm -rf dist && webpack --config webpack.config.js && cp index.html dist/",
     "serve:prpl-server": "prpl-server --root server/build",
     "serve:static": "polymer serve --port 5000 build/es5-bundled",
+    "serve:webpack": "polymer serve --port 3000 dist",
     "test": "npm run test:unit && npm run test:integration",
     "test:integration": "mocha test/integration --timeout=10000",
     "test:unit": "polymer test --module-resolution=node --npm",
@@ -41,6 +43,8 @@
     "puppeteer": "^1.4.0",
     "renamer": "^0.7.0",
     "replace": "^1.0.0",
-    "wct-browser-legacy": "^1.0.1"
+    "wct-browser-legacy": "^1.0.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.5"
   }
 }
